@@ -1,0 +1,4 @@
+.settings/
+target/
+/learn-lucene/src/test/resources/
+

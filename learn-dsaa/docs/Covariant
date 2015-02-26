@@ -1,0 +1,3 @@
+In java, the array is covariant, but Collection is not.
+
+for instance, Student IS-A Person, then Student[] IS-A Person[], but Collection<Student> IS-NOT-A Collection<Person>
