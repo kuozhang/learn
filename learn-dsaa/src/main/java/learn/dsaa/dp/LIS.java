@@ -3,15 +3,14 @@ package learn.dsaa.dp;
 /**
  * @author Kuo Zhang
  * 
- * 动态规划：最长递增子序列，Longest Increasing Subsequence
+ * Dynamic Programming: Longest Increasing Subsequence
  * 
- * 严格：必须保持元素是递增的
- * 非严格：元素相同可以放在序列里，保持非减趋势
+ * Strict: items must be incremental 
+ * Non-Strict: items can be non-decreasing
  * 
- * 不要求序列在数组中的位置是连续的
- * Output: 每个元素的最长递增自序列的长度
+ * items of sequence can be discrete 
  * 
- * // TODO, output the sequence for each item 
+ * TODO, output the sequence for each item 
  */
 public class LIS
 {
