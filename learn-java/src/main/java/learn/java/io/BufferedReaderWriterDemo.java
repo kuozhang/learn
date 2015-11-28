@@ -1,3 +1,4 @@
+
 package learn.java.io;
 
 import java.io.BufferedReader;
@@ -7,14 +8,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 /**
- * @author Kuo Zhang
- *
- * Demo for BufferedReader and BufferedWriter
+ * @author Kuo Zhang Demo for BufferedReader and BufferedWriter
  */
 public class BufferedReaderWriterDemo
 {
+
     public static void main( String[] args )
     {
         BufferedReaderWriterDemo demo = new BufferedReaderWriterDemo();
@@ -46,7 +45,7 @@ public class BufferedReaderWriterDemo
     public void copyFile( File srcFile, File destFile )
     {
         BufferedReader reader = null;
-        BufferedWriter writer = null; 
+        BufferedWriter writer = null;
 
         try
         {
@@ -57,7 +56,7 @@ public class BufferedReaderWriterDemo
 
             while( line != null )
             {
-                writer.write( line ); 
+                writer.write( line );
                 writer.newLine();
                 line = reader.readLine();
             }
@@ -76,7 +75,10 @@ public class BufferedReaderWriterDemo
                     reader.close();
                 }
             }
-            catch( IOException e ) { e.printStackTrace(); }
+            catch( IOException e )
+            {
+                e.printStackTrace();
+            }
             try
             {
                 if( writer != null )
@@ -84,7 +86,10 @@ public class BufferedReaderWriterDemo
                     writer.close();
                 }
             }
-            catch( IOException e ) { e.printStackTrace(); }
+            catch( IOException e )
+            {
+                e.printStackTrace();
+            }
         }
     }
 

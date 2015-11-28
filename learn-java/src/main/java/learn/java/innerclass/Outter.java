@@ -2,9 +2,7 @@
 package learn.java.innerclass;
 
 /**
- * @author Kuo Zhang
- *
- * usage of inner class and nested class
+ * @author Kuo Zhang usage of inner class and nested class
  */
 public class Outter
 {
@@ -19,6 +17,7 @@ public class Outter
 
     private static class StaticInner
     {
+
         private static String staticVariable = "sataticVariable"; // 静态内部类中可以有静态的成员,甚至静态类
 
         public StaticInner()

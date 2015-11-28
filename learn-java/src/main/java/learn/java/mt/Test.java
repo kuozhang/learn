@@ -1,8 +1,9 @@
-package learn.java.mt;
 
+package learn.java.mt;
 
 public class Test
 {
+
     public static void main( String[] args )
     {
         System.out.print( "foo" );

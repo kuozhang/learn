@@ -1,3 +1,4 @@
+
 package learn.java.mt;
 
 import java.util.concurrent.Callable;
@@ -6,18 +7,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-
 /**
- * @author Kuo Zhang
- * 
- * Executors is a factory which can produce different types of ThreadPool
+ * @author Kuo Zhang Executors is a factory which can produce different types of ThreadPool
  */
 public class ExecutorsDemo
 {
+
     public static void main( String[] args )
     {
-//        new ExecutorsTest().testCachedThreadPool();
-//        new ExecutorsTest().testFixedThreadPool();
+        // new ExecutorsTest().testCachedThreadPool();
+        // new ExecutorsTest().testFixedThreadPool();
         new ExecutorsDemo().testSingleThreadExecutor();
     }
 
@@ -145,6 +144,7 @@ class TaskFactory
     {
         return new Callable<String>()
         {
+
             @Override
             public String call() throws Exception
             {
@@ -159,6 +159,7 @@ class TaskFactory
     {
         return new Runnable()
         {
+
             @Override
             public void run()
             {

@@ -1,3 +1,4 @@
+
 package learn.java.io;
 
 import java.io.File;
@@ -7,14 +8,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
 /**
- * @author Kuo Zhang
- *
- * Demo for FileInputStream and FileOutputStream
+ * @author Kuo Zhang Demo for FileInputStream and FileOutputStream
  */
 public class FileStreamDemo
 {
+
     public static void main( String[] args )
     {
         FileStreamDemo demo = new FileStreamDemo();
@@ -75,7 +74,10 @@ public class FileStreamDemo
                     is.close();
                 }
             }
-            catch( IOException e ) { e.printStackTrace(); }
+            catch( IOException e )
+            {
+                e.printStackTrace();
+            }
             try
             {
                 if( os != null )
@@ -83,7 +85,10 @@ public class FileStreamDemo
                     os.close();
                 }
             }
-            catch( IOException e ) { e.printStackTrace(); }
+            catch( IOException e )
+            {
+                e.printStackTrace();
+            }
         }
     }
 }

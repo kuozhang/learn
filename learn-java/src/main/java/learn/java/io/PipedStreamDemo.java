@@ -1,9 +1,9 @@
+
 package learn.java.io;
 
 import java.io.IOException;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
-
 
 public class PipedStreamDemo
 {
@@ -33,6 +33,7 @@ public class PipedStreamDemo
 
     class Send extends Thread
     {
+
         PipedOutputStream outStream = new PipedOutputStream();
 
         public PipedOutputStream getPipedOutputStream()
@@ -67,6 +68,7 @@ public class PipedStreamDemo
 
     class Receive extends Thread
     {
+
         private PipedInputStream inStream = new PipedInputStream();
 
         public PipedInputStream getPipedInputStream()

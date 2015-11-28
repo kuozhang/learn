@@ -1,3 +1,4 @@
+
 package learn.java.mt;
 
 import java.util.LinkedList;
@@ -6,14 +7,12 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-
 /**
- * @author Kuo Zhang
- * 
- * A simple implementation of Blocking Queue, use Lock and Condition to control
+ * @author Kuo Zhang A simple implementation of Blocking Queue, use Lock and Condition to control
  */
 public class MyBlockingQueue2
 {
+
     private Lock lock = new ReentrantLock();
     private Condition notEmpty = lock.newCondition();
     private Condition notFull = lock.newCondition();

@@ -1,16 +1,15 @@
+
 package learn.java.mt;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 /**
- * @author Kuo Zhang
- * 
- * A simple implementation of Blocking Queue, use keyword synchronized to control 
+ * @author Kuo Zhang A simple implementation of Blocking Queue, use keyword synchronized to control
  */
 public class MyBlockingQueue
 {
+
     private Object notEmpty = new Object();
     private Object notFull = new Object();
     private Queue<Object> linkedList = new LinkedList<Object>();

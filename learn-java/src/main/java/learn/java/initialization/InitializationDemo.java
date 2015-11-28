@@ -1,5 +1,5 @@
-package learn.java.initialization;
 
+package learn.java.initialization;
 
 public class InitializationDemo
 {
@@ -8,9 +8,9 @@ public class InitializationDemo
     // static variable and block in super class ( depend on the orders in class )
     // static variable and block in sub class ( depend on the orders in class )
     // instance variable and block in super class ( depend on the orders in class )
-    // constructor in super class 
+    // constructor in super class
     // instance variable and block in sub class ( depend on the orders in class )
-    // constructor in sub class 
+    // constructor in sub class
     public static void main( String[] args )
     {
         new Sub();
@@ -20,6 +20,7 @@ public class InitializationDemo
 
 class Sub extends Super
 {
+
     private static String foo = "static variable in Sub class.";
 
     static
@@ -28,7 +29,7 @@ class Sub extends Super
         System.out.println( "Static block in Sub class" );
     }
 
-    private String bar = "instance variable in Sub class"; 
+    private String bar = "instance variable in Sub class";
 
     {
         System.out.println( bar );
@@ -52,7 +53,7 @@ class Super
         System.out.println( "Static block in Super class" );
     }
 
-    private String bar = "instance variable in Super class"; 
+    private String bar = "instance variable in Super class";
 
     {
         System.out.println( bar );

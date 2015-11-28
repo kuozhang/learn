@@ -41,7 +41,6 @@ import org.xml.sax.ErrorHandler;
 
 /**
  * @author Kuo Zhang
- *
  */
 public class FileUtil
 {
@@ -376,8 +375,8 @@ public class FileUtil
         }
     }
 
-
-    public static boolean searchAndReplace( File file, String search, String replace ) throws FileNotFoundException, IOException
+    public static boolean searchAndReplace( File file, String search, String replace )
+        throws FileNotFoundException, IOException
     {
         boolean replaced = false;
 
@@ -387,7 +386,7 @@ public class FileUtil
 
             final String replaceContents = searchContents.replaceAll( search, replace );
 
-            replaced = ! searchContents.equals( replaceContents );
+            replaced = !searchContents.equals( replaceContents );
 
             if( replaced )
             {
@@ -440,7 +439,7 @@ public class FileUtil
 
         final char[] buffer = new char[0x10000];
 
-        Reader in = new InputStreamReader( new ByteArrayInputStream( contents.getBytes( "UTF-8" ) ) );  //$NON-NLS-1$
+        Reader in = new InputStreamReader( new ByteArrayInputStream( contents.getBytes( "UTF-8" ) ) ); //$NON-NLS-1$
 
         Writer out = new OutputStreamWriter( outputStream, "UTF-8" ); //$NON-NLS-1$
 
@@ -463,7 +462,7 @@ public class FileUtil
 
     public static boolean compareContent( File file1, File file2 )
     {
-        if( file1 == null || ! file1.exists() || file2 == null || ! file2.exists() )
+        if( file1 == null || !file1.exists() || file2 == null || !file2.exists() )
         {
             return false; // or throw certain exception
         }
@@ -539,8 +538,10 @@ public class FileUtil
     // compare contents char by char
     public static boolean compareContents( Reader reader1, Reader reader2 ) throws IOException
     {
-        BufferedReader br1 = reader1 instanceof BufferedReader ? (BufferedReader)reader1 : new BufferedReader( reader1 );
-        BufferedReader br2 = reader2 instanceof BufferedReader ? (BufferedReader)reader2 : new BufferedReader( reader2 );
+        BufferedReader br1 =
+            reader1 instanceof BufferedReader ? (BufferedReader) reader1 : new BufferedReader( reader1 );
+        BufferedReader br2 =
+            reader2 instanceof BufferedReader ? (BufferedReader) reader2 : new BufferedReader( reader2 );
 
         int char1 = br1.read();
 
@@ -563,8 +564,10 @@ public class FileUtil
 
     public static boolean compareContentsByLine( Reader reader1, Reader reader2 ) throws IOException
     {
-        BufferedReader br1 = reader1 instanceof BufferedReader ? (BufferedReader)reader1 : new BufferedReader( reader1 );
-        BufferedReader br2 = reader2 instanceof BufferedReader ? (BufferedReader)reader2 : new BufferedReader( reader2 );
+        BufferedReader br1 =
+            reader1 instanceof BufferedReader ? (BufferedReader) reader1 : new BufferedReader( reader1 );
+        BufferedReader br2 =
+            reader2 instanceof BufferedReader ? (BufferedReader) reader2 : new BufferedReader( reader2 );
 
         String line1 = br1.readLine();
         String line2 = br2.readLine();

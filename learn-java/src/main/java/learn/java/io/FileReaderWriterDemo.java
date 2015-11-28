@@ -1,3 +1,4 @@
+
 package learn.java.io;
 
 import java.io.File;
@@ -5,14 +6,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 /**
- * @author Kuo Zhang
- *
- * Demo for FileInputStream and FileOutputStream
+ * @author Kuo Zhang Demo for FileInputStream and FileOutputStream
  */
 public class FileReaderWriterDemo
 {
+
     public static void main( String[] args )
     {
         FileReaderWriterDemo demo = new FileReaderWriterDemo();
@@ -44,7 +43,7 @@ public class FileReaderWriterDemo
     public void copyFile( File srcFile, File destFile )
     {
         FileReader reader = null;
-        FileWriter writer = null; 
+        FileWriter writer = null;
 
         try
         {
@@ -57,7 +56,7 @@ public class FileReaderWriterDemo
             while( avail > -1 )
             {
                 writer.write( buf, 0, avail );
-                avail =reader.read( buf );
+                avail = reader.read( buf );
             }
 
         }
@@ -74,7 +73,10 @@ public class FileReaderWriterDemo
                     reader.close();
                 }
             }
-            catch( IOException e ) { e.printStackTrace(); }
+            catch( IOException e )
+            {
+                e.printStackTrace();
+            }
             try
             {
                 if( writer != null )
@@ -82,7 +84,10 @@ public class FileReaderWriterDemo
                     writer.close();
                 }
             }
-            catch( IOException e ) { e.printStackTrace(); }
+            catch( IOException e )
+            {
+                e.printStackTrace();
+            }
         }
     }
 }

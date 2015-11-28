@@ -1,3 +1,4 @@
+
 package learn.java.io;
 
 import java.io.ByteArrayInputStream;
@@ -6,9 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
 public class ByteArrayStreamDemo
 {
+
     public static void main( String[] args )
     {
         String content = "Demo for ByteArrayStream";

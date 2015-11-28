@@ -1,3 +1,4 @@
+
 package learn.java.io;
 
 import java.io.BufferedReader;
@@ -9,9 +10,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
 /**
- * @author Kuo Zhang
- * 
- * Demo for process stream, not finished
+ * @author Kuo Zhang Demo for process stream, not finished
  */
 public class ProcessStreamDemo implements Runnable
 {
@@ -40,7 +39,7 @@ public class ProcessStreamDemo implements Runnable
         while( true )
         {
             bw.write( "Foo" );
-//            System.out.println("Sent: Foo");
+            // System.out.println("Sent: Foo");
         }
     }
 
