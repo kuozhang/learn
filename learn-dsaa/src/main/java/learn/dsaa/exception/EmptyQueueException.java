@@ -1,13 +1,13 @@
-package learn.dsaa.exception;
 
+package learn.dsaa.exception;
 
 /**
  * @author Kuo Zhang
- *
  */
 @SuppressWarnings( "serial" )
 public class EmptyQueueException extends RuntimeException
 {
+
     public EmptyQueueException()
     {
         super();

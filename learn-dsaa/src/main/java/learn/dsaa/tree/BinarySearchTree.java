@@ -1,8 +1,8 @@
+
 package learn.dsaa.tree;
 
 /**
  * @author Kuo Zhang
- *
  */
 public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
 {
@@ -180,16 +180,11 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
             /*
              * Can also be like this, the above one is easier to be understood
              */
-            /* if( root.left != null && root.right != null )
-             {
-             AnyType thisElement = findMin( root.right ).element;
-             root.element = thisElement;
-             root.right = remove( root.right, thisElement );
-             }
-             else
-             {
-             root = ( root.left != null ) ? root.left : root.right;
-             }*/
+            /*
+             * if( root.left != null && root.right != null ) { AnyType thisElement = findMin( root.right ).element;
+             * root.element = thisElement; root.right = remove( root.right, thisElement ); } else { root = ( root.left
+             * != null ) ? root.left : root.right; }
+             */
         }
 
         return root;

@@ -1,3 +1,4 @@
+
 package learn.dsaa.stack;
 
 import java.util.LinkedList;
@@ -5,13 +6,12 @@ import java.util.LinkedList;
 import learn.dsaa.exception.EmptyStackException;
 import learn.dsaa.exception.InvalidInputException;
 
-
 /**
  * @author Kuo Zhang
- *
  */
 public class StackByList<T> implements MyStack<T>
 {
+
     private LinkedList<T> data = new LinkedList<T>();
 
     @Override

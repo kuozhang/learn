@@ -1,14 +1,16 @@
+
 package learn.dsaa.list;
 
-
-
 /**
- * @author Kuo Zhang
- * 
+ * <p>
  * Single list means the nodes in the list has no previous pointer
+ * </p>
+ * 
+ * @author Kuo Zhang
  */
 public class SingleList<T>
 {
+
     // header doesn't store value
     private SingleListNode<T> header;
 
@@ -59,4 +61,3 @@ public class SingleList<T>
     }
 
 }
-

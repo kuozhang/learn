@@ -1,9 +1,8 @@
-package learn.dsaa.list;
 
+package learn.dsaa.list;
 
 /**
  * @author Kuo Zhang
- *
  */
 public class MyArrayList
 {

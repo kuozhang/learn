@@ -1,13 +1,16 @@
+
 package learn.dsaa.list;
 
-
 /**
- * @author Kuo Zhang
- * 
+ * <p>
  * Double list means the nodes in the list has previous pointer and next pointer
+ * </p>
+ *
+ * @author Kuo Zhang
  */
 public class DoubleList<T>
 {
+
     // header node doesn't store any value
     private DoubleListNode<T> header;
     private DoubleListNode<T> current;
@@ -42,10 +45,8 @@ public class DoubleList<T>
         return true;
     }
 
-/*    public DoubleListNode<T> getCurrent()
-    {
-        return this.current;
-    }*/
+    /*
+     * public DoubleListNode<T> getCurrent() { return this.current; }
+     */
 
 }
-

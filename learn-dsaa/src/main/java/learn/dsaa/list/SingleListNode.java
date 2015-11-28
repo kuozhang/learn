@@ -1,13 +1,16 @@
+
 package learn.dsaa.list;
 
-
 /**
- * @author Kuo Zhang
+ * <p>
+ * Single List Node should be a private class in a tree.
+ * </p>
  *
- * for convenient use, ususally Node should be a private class in a tree
+ * @author Kuo Zhang
  */
 public class SingleListNode<T>
 {
+
     public T data;
     public SingleListNode<T> next;
 

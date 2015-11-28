@@ -1,3 +1,4 @@
+
 package learn.dsaa.sort;
 
 import static org.junit.Assert.assertEquals;
@@ -5,16 +6,14 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-
 /**
- * @author Kuo Zhang 
- *
+ * @author Kuo Zhang
  */
 public class MergeSort
 {
 
-	private int[] actual;
-	private int[] excepted;
+    private int[] actual;
+    private int[] excepted;
 
     @Before
     public void init()
@@ -25,14 +24,14 @@ public class MergeSort
             new int[] { 0, 0, 1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 15, 16, 17, 18, 19, 20, 20 };
     }
 
-	@Test
-	public void test()
-	{
-	    mergeSort( actual );
-	    assertEquals( true, SortUtil.arrayEquals( actual, excepted ) );
-	}
+    @Test
+    public void test()
+    {
+        mergeSort( actual );
+        assertEquals( true, SortUtil.arrayEquals( actual, excepted ) );
+    }
 
-	// *** Merge Sort ***
+    // *** Merge Sort ***
 
     public static void mergeSort( int[] value )
     {

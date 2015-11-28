@@ -1,55 +1,58 @@
+
 package learn.dsaa.dp;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
- * @author Kuo Zhang
+ * <p>
+ * An array with 2n items, split the array to two, each of them has n items try to make the sums of the two arrays equal
+ * or closest
+ * </p>
  *
- * An array with 2n items, split the array to two, each of them has n items
- * try to make the sums of the two arrays equal or closest
+ * @author Kuo Zhang
  */
 public class SplitArray
 {
-   public static void split( int[] array )
-   {
-       int length = array.length;
 
-       if( length == 0 )
-       {
-           System.out.println( "No itemes in array." );
-           return;
-       }
+    public static void split( int[] array )
+    {
+        int length = array.length;
 
-       if( length % 2 != 0 )
-       {
-           System.out.println( "The length of input array should be a even number." );
-           return;
-       }
+        if( length == 0 )
+        {
+            System.out.println( "No itemes in array." );
+            return;
+        }
 
-       int halfLength = length / 2;
+        if( length % 2 != 0 )
+        {
+            System.out.println( "The length of input array should be a even number." );
+            return;
+        }
 
-       int sum = 0;
+        int halfLength = length / 2;
 
-       for( int i : array )
-       {
-           sum += i;
-       }
+        int sum = 0;
 
-       int halfSum = sum / 2;
+        for( int i : array )
+        {
+            sum += i;
+        }
 
-       ValueWithLocations result = doSplit( array, 0, halfLength, halfSum );
+        int halfSum = sum / 2;
 
-       System.out.println( "Sum: " + sum );
-       System.out.println( "Half of sum: " + halfSum );
-       System.out.println( "Actual half of sum: " + result.value );
+        ValueWithLocations result = doSplit( array, 0, halfLength, halfSum );
 
-       for( int loc : result.locations )
-       {
-           System.out.println( loc + ": " + array[loc] );
-       }
-   }
+        System.out.println( "Sum: " + sum );
+        System.out.println( "Half of sum: " + halfSum );
+        System.out.println( "Actual half of sum: " + result.value );
+
+        for( int loc : result.locations )
+        {
+            System.out.println( loc + ": " + array[loc] );
+        }
+    }
 
     public static ValueWithLocations doSplit( int[] array, int start, int amount, int sum )
     {
@@ -83,8 +86,8 @@ public class SplitArray
         result2.value = result2.value + array[start];
         result2.locations.add( start );
 
-        int temp1 = ( sum - result1.value ) >= 0 ? ( sum - result1.value ) : ( result1.value - sum ); 
-        int temp2 = ( sum - result2.value ) >= 0 ? ( sum - result2.value ) : ( result2.value - sum ); 
+        int temp1 = ( sum - result1.value ) >= 0 ? ( sum - result1.value ) : ( result1.value - sum );
+        int temp2 = ( sum - result2.value ) >= 0 ? ( sum - result2.value ) : ( result2.value - sum );
 
         if( temp1 <= temp2 )
         {
@@ -105,6 +108,7 @@ public class SplitArray
     // store the result value and the location of items
     private static class ValueWithLocations
     {
+
         public int value;
         public List<Integer> locations;
 

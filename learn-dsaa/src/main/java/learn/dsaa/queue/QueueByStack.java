@@ -1,17 +1,20 @@
+
 package learn.dsaa.queue;
 
 import learn.dsaa.exception.EmptyQueueException;
 import learn.dsaa.stack.MyStack;
 import learn.dsaa.stack.StackByList;
 
-
 /**
- * @author Kuo Zhang
- *
+ * <p>
  * Implemented by the two Stacks
+ * </p>
+ *
+ * @author Kuo Zhang
  */
 public class QueueByStack<T> implements MyQueue<T>
 {
+
     // stack1 is used to enqueue
     private MyStack<T> stack1;
 
@@ -41,10 +44,10 @@ public class QueueByStack<T> implements MyQueue<T>
         }
         else
         {
-            if( ! stack1.isEmpty() )
+            if( !stack1.isEmpty() )
             {
                 // transfer all elements in stack1 to stack2
-                while( ! stack1.isEmpty() )
+                while( !stack1.isEmpty() )
                 {
                     stack2.push( stack1.pop() );
                 }

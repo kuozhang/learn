@@ -1,10 +1,12 @@
+
 package learn.dsaa.tree;
 
-
 /**
+ * <p>
  * AVL Tree is mostly used for searching, the time complexity is O(logN)
- * @author Kuo Zhang
+ * </p>
  * 
+ * @author Kuo Zhang
  */
 public class AVLTree<AnyType extends Comparable<? super AnyType>>
 {
@@ -25,8 +27,8 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
         public AVLNode( AnyType element, AVLNode<AnyType> lt, AVLNode<AnyType> rt )
         {
             this.element = element;
-            left   = lt;
-            right  = rt;
+            left = lt;
+            right = rt;
             height = 0;
         }
     }
@@ -96,15 +98,15 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
     }
 
     // for test
-//    public void checkBalance()
-//    {
-//        checkBalance( root );
-//    }
-//
-//    public void checkBalance( AVLNode<AnyType> t )
-//    {
-//        
-//    }
+    // public void checkBalance()
+    // {
+    // checkBalance( root );
+    // }
+    //
+    // public void checkBalance( AVLNode<AnyType> t )
+    // {
+    //
+    // }
 
     public AVLNode<AnyType> findMax( AVLNode<AnyType> t )
     {
@@ -128,7 +130,7 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
             return t;
         }
 
-        while( t.left!= null )
+        while( t.left != null )
         {
             t = t.left;
         }
@@ -156,36 +158,13 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
             return new AVLNode<AnyType>( x );
         }
 
-        /* if( x.compareTo( t.element ) < 0 )
-        {
-            t.left = insert( t.left, x );
-            if( height( t.left ) - height( t.right ) == 2 )
-            {
-                if( x.compareTo( t.left.element ) < 0 )
-                {
-                    singleRotateWithLeftChild( t );
-                }
-                else
-                {
-                    doubleRotateRightLeft( t );
-                }
-            }
-        }
-        else if( x.compareTo( t.element ) > 0 )
-        {
-            t.right = insert( t.right, x );
-            if( height( t.right ) - height( t.left ) == 2 )
-            {
-                if( x.compareTo( t.right.element ) > 0 )
-                {
-                    singleRotateWithRightChild( t );
-                }
-                else
-                {
-                    doubleRotateLeftRight( t );
-                }
-            }
-        }*/
+        /*
+         * if( x.compareTo( t.element ) < 0 ) { t.left = insert( t.left, x ); if( height( t.left ) - height( t.right )
+         * == 2 ) { if( x.compareTo( t.left.element ) < 0 ) { singleRotateWithLeftChild( t ); } else {
+         * doubleRotateRightLeft( t ); } } } else if( x.compareTo( t.element ) > 0 ) { t.right = insert( t.right, x );
+         * if( height( t.right ) - height( t.left ) == 2 ) { if( x.compareTo( t.right.element ) > 0 ) {
+         * singleRotateWithRightChild( t ); } else { doubleRotateLeftRight( t ); } } }
+         */
 
         if( x.compareTo( t.element ) < 0 )
         {
@@ -230,12 +209,12 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
     // inorder traversal, print elements in order
     private void printTree( AVLNode<AnyType> x )
     {
-       if( x != null ) 
-       {
-           printTree( x.left );
-           System.out.println( x.element );
-           printTree( x.right );
-       }
+        if( x != null )
+        {
+            printTree( x.left );
+            System.out.println( x.element );
+            printTree( x.right );
+        }
     }
 
     public void remove( AnyType x )
@@ -252,7 +231,7 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
 
         int compareResult = x.compareTo( t.element );
 
-        if( compareResult < 0  )
+        if( compareResult < 0 )
         {
             t.left = remove( x, t.left );
         }
@@ -265,11 +244,10 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
             if( t.left != null && t.right != null )
             {
                 /*
-                 * use the min value of right child tree to replace the element, remove that node.
-                 * or you can use the max value of left child, the same way.
-                 * also you can reason that the node going to be removed has at most node, because if it has two nodes,
-                 * there must be one less than it ( not right for removing min value of right child tree) 
-                 * and larger than it(not right for removing max value of left child tree) 
+                 * use the min value of right child tree to replace the element, remove that node. or you can use the
+                 * max value of left child, the same way. also you can reason that the node going to be removed has at
+                 * most node, because if it has two nodes, there must be one less than it ( not right for removing min
+                 * value of right child tree) and larger than it(not right for removing max value of left child tree)
                  */
                 t.element = findMin( t.right ).element;
                 t.right = remove( t.element, t.right );
@@ -312,8 +290,7 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
     }
 
     /*
-     * Insert left leaf node to right tree
-     * SingleRotateWithLeftChild + SingRotateWithRightChild
+     * Insert left leaf node to right tree SingleRotateWithLeftChild + SingRotateWithRightChild
      */
     private AVLNode<AnyType> doubleRotateLeftRight( AVLNode<AnyType> x )
     {
@@ -323,13 +300,12 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
     }
 
     /*
-     * Insert right leaf node to left tree
-     * SingleRotateWithRightChild + SingRotateWithLeftChild
+     * Insert right leaf node to left tree SingleRotateWithRightChild + SingRotateWithLeftChild
      */
     private AVLNode<AnyType> doubleRotateRightLeft( AVLNode<AnyType> x )
     {
         x.left = singleRotateWithRightChild( x.left );
-        x= singleRotateWithLeftChild( x ) ;
+        x = singleRotateWithLeftChild( x );
         return x;
     }
 }

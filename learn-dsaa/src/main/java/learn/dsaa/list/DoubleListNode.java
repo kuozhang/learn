@@ -1,12 +1,12 @@
-package learn.dsaa.list;
 
+package learn.dsaa.list;
 
 /**
  * @author Kuo Zhang
- *
  */
 public class DoubleListNode<T>
 {
+
     public T data;
     public DoubleListNode<T> next;
     public DoubleListNode<T> prev;

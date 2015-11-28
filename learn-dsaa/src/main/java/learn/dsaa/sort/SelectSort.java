@@ -1,3 +1,4 @@
+
 package learn.dsaa.sort;
 
 import static org.junit.Assert.assertEquals;
@@ -5,13 +6,12 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-
 /**
- * @author Kuo Zhang 
- *
+ * @author Kuo Zhang
  */
 public class SelectSort
 {
+
     private int[] actual;
     private int[] excepted;
 

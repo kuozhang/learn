@@ -7,8 +7,6 @@ import java.util.List;
 
 /**
  * @author Kuo Zhang
- *
- * 跳跃链表
  */
 public class SkipList
 {

@@ -1,10 +1,15 @@
+
 package learn.dsaa.tree;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Kuo Zhang
+ */
 public class BinaryTreeNode
 {
+
     private int data;
     private BinaryTreeNode leftChildNode;
     private BinaryTreeNode rightChildNode;
@@ -29,13 +34,13 @@ public class BinaryTreeNode
         }
 
         inOrderTraversal( node.leftChildNode );
-        System.out.println( node.data);
+        System.out.println( node.data );
         inOrderTraversal( node.rightChildNode );
     }
 
     public static void preOrderTraversal( BinaryTreeNode node )
     {
-        if( node == null)
+        if( node == null )
         {
             return;
         }
@@ -63,7 +68,7 @@ public class BinaryTreeNode
         {
             if( rootNode.leftChildNode != null )
             {
-                insertNode( insertedNode, rootNode.leftChildNode ); 
+                insertNode( insertedNode, rootNode.leftChildNode );
             }
             else
             {

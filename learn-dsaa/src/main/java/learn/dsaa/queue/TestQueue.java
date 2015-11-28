@@ -1,20 +1,20 @@
+
 package learn.dsaa.queue;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-
 /**
  * @author Kuo Zhang
- *
  */
 public class TestQueue
 {
+
     @Test
     public void testQueueByStack()
     {
-        MyQueue<Integer> queue = new QueueByStack<>(); 
+        MyQueue<Integer> queue = new QueueByStack<>();
 
         assertEquals( true, queue.isEmpty() );
 

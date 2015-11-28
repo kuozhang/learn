@@ -1,13 +1,15 @@
+
 package learn.dsaa.tree;
 
-
 /**
+ * <p>
+ * same as AVLTree$AVLNode, for normal use
+ * </p>
+ * 
  * @author Kuo Zhang
- *
- * this same as AVLTree$AVLNode, for normal use
  */
 @SuppressWarnings( "rawtypes" )
-public class AVLNode<T extends Comparable< ? super T>> extends BinaryNode
+public class AVLNode<T extends Comparable<? super T>> extends BinaryNode
 {
 
     private int height;

@@ -1,11 +1,8 @@
 
 package learn.dsaa.misc;
 
-
 /**
- * @author Kuo Zhang
- *
- * 求最大子序列和
+ * @author Kuo Zhang 求最大子序列和
  */
 public class MaxSubSummary
 {

@@ -1,3 +1,4 @@
+
 package learn.dsaa.sort;
 
 import static org.junit.Assert.assertEquals;
@@ -5,9 +6,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class ShellSort
 {
+
     private int[] actual;
     private int[] excepted;
 
@@ -38,7 +39,7 @@ public class ShellSort
         {
             for( int i = 0; i < d; i++ )
             {
-                for( int j = i ; j < length; j += d )
+                for( int j = i; j < length; j += d )
                 {
                     int povit = value[j];
 

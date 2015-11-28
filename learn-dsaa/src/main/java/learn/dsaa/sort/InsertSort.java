@@ -6,15 +6,14 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-
 /**
  * @author Kuo Zhang
- *
  */
 public class InsertSort
 {
-	private int[] actual;
-	private int[] excepted;
+
+    private int[] actual;
+    private int[] excepted;
 
     @Before
     public void init()
@@ -25,21 +24,21 @@ public class InsertSort
             new int[] { 0, 0, 1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 15, 16, 17, 18, 19, 20, 20 };
     }
 
-	@Test
-	public void test()
-	{
-	    int length = actual.length;
-	    int[] temp1 = new int[length];
+    @Test
+    public void test()
+    {
+        int length = actual.length;
+        int[] temp1 = new int[length];
 
         System.arraycopy( actual, 0, temp1, 0, length );
         insertSort( temp1 );
-	    assertEquals( true, SortUtil.arrayEquals( temp1, excepted ) );
+        assertEquals( true, SortUtil.arrayEquals( temp1, excepted ) );
 
-	    int[] temp2 = new int[length];
+        int[] temp2 = new int[length];
         System.arraycopy( actual, 0, temp2, 0, length );
         insertSort( temp2, 0, length - 1 );
-	    assertEquals( true, SortUtil.arrayEquals( temp2, excepted ) );
-	}
+        assertEquals( true, SortUtil.arrayEquals( temp2, excepted ) );
+    }
 
     // *** Insert Sort ***
 

@@ -1,9 +1,8 @@
-package learn.dsaa.exception;
 
+package learn.dsaa.exception;
 
 /**
  * @author Kuo Zhang
- *
  */
 @SuppressWarnings( "serial" )
 public class EmptyStackException extends RuntimeException

@@ -1,16 +1,16 @@
+
 package learn.dsaa.stack;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-
 /**
  * @author Kuo Zhang
- *
  */
 public class TestMyStack
 {
+
     @Test
     public void testStackByArray()
     {

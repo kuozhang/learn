@@ -1,3 +1,4 @@
+
 package learn.dsaa.misc;
 
 import static org.junit.Assert.assertEquals;
@@ -5,27 +6,31 @@ import learn.dsaa.exception.InvalidInputException;
 
 import org.junit.Test;
 
-
 /**
+ * <p>
+ * TODO handle the case where input is 100, use BigInteger?
+ * </p>
+ * <p>
+ * fib_1 means the return value is the value of the Nst element.
+ * </p>
+ * <p>
+ * fib_2 means the return value is the set of all elements.
+ * </p>
+ * <p>
+ * improved_fib* means using loop but not recursion
+ * </p>
+ * <p>
+ * without "improved" prefix means using recursion
+ * </p>
+ * 
  * @author Kuo Zhang
- *
- * 斐波那契数列
- * 
- * // TODO handle the case where input is 100, use BigInteger?
- * 
- *  **fib_1 means the return value is the value of the Nst element
- *  **fib_2 means the return value is the set of all elements
- *  
- *  improved_fib* means using loop but not recursion, without "improved" prefix means using recursion
- *  
  */
 public class Fibonacci
 {
 
     /*
-     * this recursion has a really bad performance, because fib( n-1 ), fib( n-2 ) ... f(n-n),
-     * all of them are called multiple times. 
-     *
+     * this recursion has a really bad performance, because fib( n-1 ), fib( n-2 ) ... f(n-n), all of them are called
+     * multiple times.
      */
     public static int fib_1( int n )
     {
@@ -55,14 +60,14 @@ public class Fibonacci
             throw new InvalidInputException( "The input cannot be less than 0." );
         }
 
-        int[] retval = new int[ n + 1 ];
+        int[] retval = new int[n + 1];
 
         fib_2_internal( n, retval );
 
         return retval;
     }
 
-    public static int fib_2_internal( int n, int[] values ) 
+    public static int fib_2_internal( int n, int[] values )
     {
         if( n == 0 )
         {
@@ -81,10 +86,7 @@ public class Fibonacci
         }
     }
 
-    /*
-     * an improved fibonacci, use loop to replace the recursion
-     * 
-     */
+    // an improved fibonacci, use loop to replace the recursion
     public static int improved_fib_1( int n )
     {
         if( n < 0 )
@@ -114,7 +116,7 @@ public class Fibonacci
         return result;
     }
 
-    // return the whole fibonacci set from 0 to n 
+    // return the whole fibonacci set from 0 to n
     public static int[] improved_fib_2( int n )
     {
         if( n < 0 )
@@ -122,7 +124,7 @@ public class Fibonacci
             throw new InvalidInputException( "The input cannot be less than 0" );
         }
 
-        int[] retval = new int[ n + 1];
+        int[] retval = new int[n + 1];
 
         if( n == 0 )
         {
@@ -170,7 +172,7 @@ public class Fibonacci
 
         assertEquals( excepted.length, actual.length );
 
-        for( int i = 0; i < excepted.length ; i ++ )
+        for( int i = 0; i < excepted.length; i++ )
         {
             assertEquals( excepted[i], actual[i] );
         }
@@ -187,7 +189,7 @@ public class Fibonacci
 
         assertEquals( excepted.length, actual.length );
 
-        for( int i = 0; i < excepted.length ; i ++ )
+        for( int i = 0; i < excepted.length; i++ )
         {
             assertEquals( excepted[i], actual[i] );
         }
@@ -209,7 +211,7 @@ public class Fibonacci
 
         assertEquals( excepted.length, actual.length );
 
-        for( int i = 0; i < excepted.length ; i ++ )
+        for( int i = 0; i < excepted.length; i++ )
         {
             assertEquals( excepted[i], actual[i] );
         }
@@ -226,7 +228,7 @@ public class Fibonacci
 
         assertEquals( excepted.length, actual.length );
 
-        for( int i = 0; i < excepted.length ; i ++ )
+        for( int i = 0; i < excepted.length; i++ )
         {
             assertEquals( excepted[i], actual[i] );
         }

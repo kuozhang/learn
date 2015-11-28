@@ -1,13 +1,16 @@
+
 package learn.dsaa.tree;
 
-
 /**
+ * <p>
+ * same as the BinaryTree$BinaryNode, for normal use
+ * </p>
+ *
  * @author Kuo Zhang
- * 
- * the same as the BinaryTree$BinaryNode, for normal use
  */
-public class BinaryNode<T extends Comparable< ? super T>> implements Node
+public class BinaryNode<T extends Comparable<? super T>> implements Node
 {
+
     T data;
     private BinaryNode<T> left;
     private BinaryNode<T> right;
@@ -19,7 +22,7 @@ public class BinaryNode<T extends Comparable< ? super T>> implements Node
 
     public BinaryNode( T data, BinaryNode<T> left, BinaryNode<T> right )
     {
-        this.data= data;
+        this.data = data;
         this.left = left;
         this.right = right;
     }
@@ -55,4 +58,3 @@ public class BinaryNode<T extends Comparable< ? super T>> implements Node
     }
 
 }
-
