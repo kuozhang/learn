@@ -14,7 +14,7 @@ public class TestMyStack
     @Test
     public void testStackByArray()
     {
-        StackByArray<Integer> stack = new StackByArray<Integer>();
+        StackByArrayList<Integer> stack = new StackByArrayList<Integer>();
 
         stack.push( 1 );
         stack.push( 2 );
@@ -23,20 +23,20 @@ public class TestMyStack
         stack.push( 5 );
 
         assertEquals( 5, stack.pop().intValue() );
-        assertEquals( 4, stack.top().intValue() );
+        assertEquals( 4, stack.element().intValue() );
         assertEquals( 4, stack.pop().intValue() );
         assertEquals( 3, stack.pop().intValue() );
 
         stack.push( 10 );
-        assertEquals( 10, stack.top().intValue() );
+        assertEquals( 10, stack.element().intValue() );
         assertEquals( 10, stack.pop().intValue() );
-        assertEquals( 2, stack.top().intValue() );
+        assertEquals( 2, stack.element().intValue() );
     }
 
     @Test
     public void testStackByList()
     {
-        StackByList<Integer> stack = new StackByList<Integer>();
+        StackByLinkedList<Integer> stack = new StackByLinkedList<Integer>();
 
         stack.push( 1 );
         stack.push( 2 );
@@ -45,14 +45,14 @@ public class TestMyStack
         stack.push( 5 );
 
         assertEquals( 5, stack.pop().intValue() );
-        assertEquals( 4, stack.top().intValue() );
+        assertEquals( 4, stack.element().intValue() );
         assertEquals( 4, stack.pop().intValue() );
         assertEquals( 3, stack.pop().intValue() );
 
         stack.push( 10 );
-        assertEquals( 10, stack.top().intValue() );
+        assertEquals( 10, stack.element().intValue() );
         assertEquals( 10, stack.pop().intValue() );
-        assertEquals( 2, stack.top().intValue() );
+        assertEquals( 2, stack.element().intValue() );
     }
 
 }

@@ -1,25 +1,19 @@
 
 package learn.dsaa.stack;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import learn.dsaa.exception.EmptyStackException;
 import learn.dsaa.exception.InvalidInputException;
+import learn.dsaa.list.List;
+import learn.dsaa.list.MyArrayList;
 
 /**
- * <p>
- * Implementation of Array, this is a really simple implementation, wraps the ArrayList, the real implementation should
- * be like the inner of ArrayList, use a variable to control the capacity
- * </p>
- *
  * @author Kuo Zhang
  */
-public class StackByArray<T> implements Stack<T>
+public class StackByArrayList<T> implements Stack<T>
 {
     // private int capacity; control the capacity
 
-    private List<T> data = new ArrayList<>();
+    private List<T> data = new MyArrayList<T>();
 
     @Override
     public void push( T t )
@@ -48,7 +42,7 @@ public class StackByArray<T> implements Stack<T>
     }
 
     @Override
-    public T top()
+    public T element()
     {
         if( isEmpty() )
         {

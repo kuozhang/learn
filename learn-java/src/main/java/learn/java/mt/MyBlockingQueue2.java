@@ -22,7 +22,7 @@ public class MyBlockingQueue2
     private Queue<Object> linkedList = new LinkedList<Object>();
     private int maxLength = 10;
 
-    public Object take() throws InterruptedException
+    public Object dequeue() throws InterruptedException
     {
         lock.lock();
 
@@ -46,7 +46,7 @@ public class MyBlockingQueue2
         }
     }
 
-    public Object offer( Object object ) throws InterruptedException
+    public boolean enqueue( Object object ) throws InterruptedException
     {
         lock.lock();
 

@@ -10,7 +10,7 @@ import java.util.Queue;
  *
  * @author Kuo Zhang
  */
-public class MyBlockingQueue
+public class MyBlockingQueue 
 {
 
     private Object notEmpty = new Object();
@@ -18,7 +18,7 @@ public class MyBlockingQueue
     private Queue<Object> linkedList = new LinkedList<Object>();
     private int maxLength = 10;
 
-    public Object take() throws InterruptedException
+    public Object dequeue() throws InterruptedException
     {
         // 如果没有获得对象的锁，线程进入到对象的锁池中，进入阻塞状态
         synchronized( notEmpty )
@@ -42,7 +42,7 @@ public class MyBlockingQueue
         }
     }
 
-    public Object offer( Object object ) throws InterruptedException
+    public boolean enqueue( Object object ) throws InterruptedException
     {
         synchronized( notEmpty )
         {

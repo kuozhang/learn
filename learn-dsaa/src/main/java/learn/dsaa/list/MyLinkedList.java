@@ -296,4 +296,65 @@ public class MyLinkedList<T> implements List<T>
 
     }
 
+    public void addLast( T t )
+    {
+        // add( t );
+        Node<T> newNode = new Node<>( t, tailer.prev, tailer );
+        tailer.prev.next = newNode;
+        tailer.prev = newNode;
+        
+        size++;
+        modCount++;
+    }
+
+    public T removeFirst()
+    {
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        
+        Node<T> first = header.next;
+        
+        header.next = first.next;
+        first.next.prev = header;
+
+        size--;
+        modCount++;
+        return first.data;
+    }
+
+    public T removeLast()
+    {
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        
+        Node<T> last = tailer.prev;
+        
+        last.prev.next = tailer;
+        tailer.prev = header.prev;
+
+        size--;
+        modCount++;
+        return last.data;
+    }
+
+    public T getFirst()
+    {
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+
+        return header.next.data;
+    }
+
+    public T getLast()
+    {
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+
+        return tailer.prev.data;
+    }
+
 }

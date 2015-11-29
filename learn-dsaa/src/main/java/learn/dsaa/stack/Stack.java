@@ -2,6 +2,8 @@
 package learn.dsaa.stack;
 
 /**
+ * <p> LIFO: last in, first out
+ *
  * @author Kuo Zhang
  */
 public interface Stack<T>
@@ -11,7 +13,8 @@ public interface Stack<T>
 
     public T pop();
 
-    public T top();
+    // return the element, but does not remove
+    public T element();
 
     public boolean isEmpty();
 }

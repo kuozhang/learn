@@ -3,7 +3,7 @@ package learn.dsaa.queue;
 
 import learn.dsaa.exception.EmptyQueueException;
 import learn.dsaa.stack.Stack;
-import learn.dsaa.stack.StackByList;
+import learn.dsaa.stack.StackByLinkedList;
 
 /**
  * <p>
@@ -23,8 +23,8 @@ public class QueueByStack<T> implements Queue<T>
 
     public QueueByStack()
     {
-        stack1 = new StackByList<T>();
-        stack2 = new StackByList<T>();
+        stack1 = new StackByLinkedList<T>();
+        stack2 = new StackByLinkedList<T>();
     }
 
     @Override
@@ -68,4 +68,33 @@ public class QueueByStack<T> implements Queue<T>
     {
         return stack1.isEmpty() && stack2.isEmpty();
     }
+
+	@Override
+	public T element() {
+        T retval = null;
+
+        if( !stack2.isEmpty() )
+        {
+            retval = stack2.element();
+        }
+        else
+        {
+            if( !stack1.isEmpty() )
+            {
+                // transfer all elements in stack1 to stack2
+                while( !stack1.isEmpty() )
+                {
+                    stack2.push( stack1.pop() );
+                }
+
+                retval = stack2.element();
+            }
+            else
+            {
+                throw new EmptyQueueException();
+            }
+        }
+
+        return retval;
+	}
 }
