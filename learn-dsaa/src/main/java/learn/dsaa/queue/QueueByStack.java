@@ -2,7 +2,7 @@
 package learn.dsaa.queue;
 
 import learn.dsaa.exception.EmptyQueueException;
-import learn.dsaa.stack.MyStack;
+import learn.dsaa.stack.Stack;
 import learn.dsaa.stack.StackByList;
 
 /**
@@ -12,14 +12,14 @@ import learn.dsaa.stack.StackByList;
  *
  * @author Kuo Zhang
  */
-public class QueueByStack<T> implements MyQueue<T>
+public class QueueByStack<T> implements Queue<T>
 {
 
     // stack1 is used to enqueue
-    private MyStack<T> stack1;
+    private Stack<T> stack1;
 
     // stack2 is used to dequeue
-    private MyStack<T> stack2;
+    private Stack<T> stack2;
 
     public QueueByStack()
     {

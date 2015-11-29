@@ -4,7 +4,7 @@ package learn.dsaa.stack;
 /**
  * @author Kuo Zhang
  */
-public interface MyStack<T>
+public interface Stack<T>
 {
 
     public void push( T t );

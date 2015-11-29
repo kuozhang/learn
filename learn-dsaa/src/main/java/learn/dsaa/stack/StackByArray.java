@@ -15,7 +15,7 @@ import learn.dsaa.exception.InvalidInputException;
  *
  * @author Kuo Zhang
  */
-public class StackByArray<T> implements MyStack<T>
+public class StackByArray<T> implements Stack<T>
 {
     // private int capacity; control the capacity
 

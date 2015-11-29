@@ -4,7 +4,7 @@ package learn.dsaa.queue;
 /**
  * @author Kuo Zhang
  */
-public interface MyQueue<T>
+public interface Queue<T>
 {
 
     public void enqueue( T t );

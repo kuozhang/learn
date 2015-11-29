@@ -14,7 +14,7 @@ public class TestQueue
     @Test
     public void testQueueByStack()
     {
-        MyQueue<Integer> queue = new QueueByStack<>();
+        Queue<Integer> queue = new QueueByStack<>();
 
         assertEquals( true, queue.isEmpty() );
 

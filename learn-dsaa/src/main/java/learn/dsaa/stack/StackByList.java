@@ -9,7 +9,7 @@ import learn.dsaa.exception.InvalidInputException;
 /**
  * @author Kuo Zhang
  */
-public class StackByList<T> implements MyStack<T>
+public class StackByList<T> implements Stack<T>
 {
 
     private LinkedList<T> data = new LinkedList<T>();
