@@ -5,6 +5,7 @@ package learn.dsaa.tree;
  * @author Kuo Zhang
  */
 public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
+    implements BinaryTree<AnyType>, SearchableTree<AnyType>
 {
 
     private static class BinaryNode<AnyType>
@@ -190,7 +191,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
         return root;
     }
 
-    public void preordeTraversal()
+    public void preorderTraversal()
     {
         if( isEmpty() )
         {
@@ -255,4 +256,5 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
             System.out.println( x.element );
         }
     }
+
 }

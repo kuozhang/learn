@@ -9,6 +9,7 @@ package learn.dsaa.tree;
  * @author Kuo Zhang
  */
 public class AVLTree<AnyType extends Comparable<? super AnyType>>
+    implements BinaryTree<AnyType>, SearchableTree<AnyType>
 {
 
     private static class AVLNode<AnyType>
@@ -33,8 +34,8 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
         }
     }
 
-    private AVLNode<AnyType> root;
     private static final int ALLOWED_IMBLANCE = 1;
+    private AVLNode<AnyType> root;
 
     private AVLNode<AnyType> balance( AVLNode<AnyType> t )
     {
@@ -97,16 +98,36 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
         }
     }
 
-    // for test
-    // public void checkBalance()
-    // {
-    // checkBalance( root );
-    // }
-    //
-    // public void checkBalance( AVLNode<AnyType> t )
-    // {
-    //
-    // }
+    /*
+     * Insert left leaf node to right tree SingleRotateWithLeftChild + SingRotateWithRightChild
+     */
+    private AVLNode<AnyType> doubleRotateLeftRight( AVLNode<AnyType> x )
+    {
+        x.right = singleRotateWithLeftChild( x.right );
+        x = singleRotateWithRightChild( x );
+        return x;
+    }
+
+    /*
+     * Insert right leaf node to left tree SingleRotateWithRightChild + SingRotateWithLeftChild
+     */
+    private AVLNode<AnyType> doubleRotateRightLeft( AVLNode<AnyType> x )
+    {
+        x.left = singleRotateWithRightChild( x.left );
+        x = singleRotateWithLeftChild( x );
+        return x;
+    }
+
+    @Override
+    public AnyType findMax()
+    {
+        if( isEmpty() )
+        {
+            return null;
+        }
+
+        return findMax( root ).element;
+    }
 
     public AVLNode<AnyType> findMax( AVLNode<AnyType> t )
     {
@@ -123,7 +144,17 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
         return t;
     }
 
-    public AVLNode<AnyType> findMin( AVLNode<AnyType> t )
+    public AnyType findMin()
+    {
+        if( isEmpty() )
+        {
+            return null;
+        }
+
+        return findMin( root ).element;
+    }
+
+    private AVLNode<AnyType> findMin( AVLNode<AnyType> t )
     {
         if( t == null )
         {
@@ -141,6 +172,28 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
     private int height( AVLNode<AnyType> x )
     {
         return x == null ? -1 : x.height;
+    }
+
+    public void inorderTraversal()
+    {
+        if( isEmpty() )
+        {
+            System.out.println( "Empty Tree!" );
+        }
+        else
+        {
+            inorderTraversal( root );
+        }
+    }
+
+    private void inorderTraversal( AVLNode<AnyType> x )
+    {
+        if( x != null )
+        {
+            inorderTraversal( x.left );
+            System.out.println( x.element );
+            inorderTraversal( x.right );
+        }
     }
 
     public void insert( AnyType x )
@@ -183,7 +236,7 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
         return balance( t );
     }
 
-    private boolean isEmpty()
+    public boolean isEmpty()
     {
         return root == null;
     }
@@ -192,6 +245,50 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
     {
         root = null;
         // TODO, need to destroy other elements?
+    }
+
+    public void postorderTraversal()
+    {
+        if( isEmpty() )
+        {
+            System.out.println( "Empty Tree!" );
+        }
+        else
+        {
+            postorderTraversal( root );
+        }
+    }
+
+    private void postorderTraversal( AVLNode<AnyType> x )
+    {
+        if( x != null )
+        {
+            postorderTraversal( x.left );
+            postorderTraversal( x.right );
+            System.out.println( x.element );
+        }
+    }
+
+    public void preorderTraversal()
+    {
+        if( isEmpty() )
+        {
+            System.out.println( "Empty Tree!" );
+        }
+        else
+        {
+            preorderTraversal( root );
+        }
+    }
+
+    private void preorderTraversal( AVLNode<AnyType> x )
+    {
+        if( x != null )
+        {
+            System.out.println( x.element );
+            preorderTraversal( x.left );
+            preorderTraversal( x.right );
+        }
     }
 
     public void printTree()
@@ -222,7 +319,7 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
         remove( x, root );
     }
 
-    public AVLNode<AnyType> remove( AnyType x, AVLNode<AnyType> t )
+    private AVLNode<AnyType> remove( AnyType x, AVLNode<AnyType> t )
     {
         if( t == null )
         {
@@ -287,25 +384,5 @@ public class AVLTree<AnyType extends Comparable<? super AnyType>>
         right.height = Math.max( height( right.left ), height( right.right ) ) + 1;
 
         return right;
-    }
-
-    /*
-     * Insert left leaf node to right tree SingleRotateWithLeftChild + SingRotateWithRightChild
-     */
-    private AVLNode<AnyType> doubleRotateLeftRight( AVLNode<AnyType> x )
-    {
-        x.right = singleRotateWithLeftChild( x.right );
-        x = singleRotateWithRightChild( x );
-        return x;
-    }
-
-    /*
-     * Insert right leaf node to left tree SingleRotateWithRightChild + SingRotateWithLeftChild
-     */
-    private AVLNode<AnyType> doubleRotateRightLeft( AVLNode<AnyType> x )
-    {
-        x.left = singleRotateWithRightChild( x.left );
-        x = singleRotateWithLeftChild( x );
-        return x;
     }
 }
