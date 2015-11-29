@@ -2,8 +2,10 @@
 package learn.java.mt;
 
 /**
- * @author Kuo Zhang This class proves that if a thread is running, but not blocked, than method interrupt() doesn't
- *         work.
+ * <p>
+ * This class proves if a thread is running, but not blocked, than method interrupt() doesn't work.
+ *
+ * @author Kuo Zhang
  */
 public class InterruptDemo extends Thread
 {

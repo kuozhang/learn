@@ -8,7 +8,10 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author Kuo Zhang A simple implementation of Blocking Queue, use Lock and Condition to control
+ * <p>
+ * A simple implementation of Blocking Queue, use Lock and Condition to control
+ *
+ * @author Kuo Zhang
  */
 public class MyBlockingQueue2
 {

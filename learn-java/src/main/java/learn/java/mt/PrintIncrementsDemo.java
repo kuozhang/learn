@@ -1,10 +1,11 @@
 
 package learn.java.mt;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
- * @author Kuo Zhang start multiple threads to print the increment values form 1 to 100
+ * <p>
+ * start multiple threads to print the increment values form 1 to 100
+ *
+ * @author Kuo Zhang
  */
 public class PrintIncrementsDemo implements Runnable
 {
@@ -26,9 +27,17 @@ public class PrintIncrementsDemo implements Runnable
     }
 
     // the "static synchronized"
-    public static synchronized void print()
+    public synchronized static void print()
     {
         System.out.println( ++count );
     }
+
+    // or
+    // public static void print()
+    // {
+    // synchronized(PrintIncrementsDemo.class){
+    // System.out.println( ++count );
+    // }
+    // }
 
 }

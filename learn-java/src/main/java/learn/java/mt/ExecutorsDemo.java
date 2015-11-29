@@ -8,7 +8,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
- * @author Kuo Zhang Executors is a factory which can produce different types of ThreadPool
+ * <p>
+ * Executors is a factory which can produce different types of ThreadPool
+ *
+ * @author Kuo Zhang
  */
 public class ExecutorsDemo
 {

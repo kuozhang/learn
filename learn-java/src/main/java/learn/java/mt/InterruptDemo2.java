@@ -2,7 +2,10 @@
 package learn.java.mt;
 
 /**
- * @author Kuo Zhang This proves that if a thread is blocked, then the method interrupt() works.
+ * <p>
+ * This proves if a thread is blocked, then the method interrupt() works.
+ *
+ * @author Kuo Zhang
  */
 public class InterruptDemo2 extends Thread
 {
